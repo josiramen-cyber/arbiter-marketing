@@ -39,10 +39,10 @@ export default function Trust() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-xs font-semibold uppercase tracking-widest text-[#C9A84C] mb-3">
-            {t("Voor Nederlandse praktijk", "For Dutch practice")}
+            {t("Vertrouwen & compliance", "Trust & compliance")}
           </p>
           <h2 className="font-serif text-4xl font-medium text-[#0C0F14]">
-            {t("Gebouwd voor de Nederlandse rechtsorde.", "Built for Dutch legal practice.")}
+            {t("Gebouwd op vertrouwen.", "Built on trust.")}
           </h2>
         </div>
 

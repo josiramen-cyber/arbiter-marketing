@@ -9,6 +9,7 @@ import Problem from "@/components/sections/Problem";
 import Solution from "@/components/sections/Solution";
 import Features from "@/components/sections/Features";
 import HowItWorks from "@/components/sections/HowItWorks";
+import Pricing from "@/components/sections/Pricing";
 import Trust from "@/components/sections/Trust";
 import FinalCTA from "@/components/sections/FinalCTA";
 
@@ -36,6 +37,7 @@ export default function Home() {
         <FadeIn delay={0.05}><Solution /></FadeIn>
         <FadeIn delay={0.05}><Features /></FadeIn>
         <FadeIn delay={0.05}><HowItWorks /></FadeIn>
+        <FadeIn delay={0.05}><Pricing /></FadeIn>
         <FadeIn delay={0.05}><Trust /></FadeIn>
         <FadeIn delay={0.05}><FinalCTA /></FadeIn>
       </main>

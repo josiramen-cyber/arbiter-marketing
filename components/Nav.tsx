@@ -14,23 +14,31 @@ export default function Nav() {
   const links = [
     { label: t("Product", "Product"), href: "#product" },
     { label: t("Functies", "Features"), href: "#features" },
+    { label: t("Prijzen", "Pricing"), href: "#pricing" },
     { label: t("Vertrouwen", "Trust"), href: "#trust" },
-    { label: t("Contact", "Contact"), href: "#cta" },
   ];
 
   return (
     <>
       <SignupModal open={modalOpen} onClose={() => setModalOpen(false)} />
 
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#E5E4DE] h-16">
-        <div className="max-w-7xl mx-auto px-5 h-full flex items-center justify-between gap-4">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 flex-shrink-0">
-            <Image src="/logo.svg" alt="Arbiter" width={28} height={28} />
-            <span className="font-serif font-bold text-lg text-[#0C0F14] leading-none">Arbiter</span>
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#E5E4DE]">
+        <div className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between gap-4">
+
+          {/* Logo lockup */}
+          <a href="#" className="flex items-center gap-2.5 flex-shrink-0 group">
+            <Image src="/logo.svg" alt="Arbiter Legal" width={30} height={30} />
+            <div className="flex flex-col leading-none">
+              <span className="font-serif font-bold text-[17px] text-[#0C0F14] tracking-tight">
+                Arbiter Legal
+              </span>
+              <span className="text-[10px] text-[#C9A84C] font-medium tracking-wide mt-0.5">
+                {t("Minder administratie. Betere praktijk.", "Less admin. Better practice.")}
+              </span>
+            </div>
           </a>
 
-          {/* Desktop nav links */}
+          {/* Desktop nav */}
           <ul className="hidden md:flex items-center gap-7">
             {links.map((l) => (
               <li key={l.href}>
@@ -41,8 +49,8 @@ export default function Nav() {
             ))}
           </ul>
 
-          {/* Desktop right actions */}
-          <div className="hidden md:flex items-center gap-4 flex-shrink-0">
+          {/* Desktop actions */}
+          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
             <button
               onClick={() => setLang(lang === "nl" ? "en" : "nl")}
               className="text-xs font-semibold text-[#6B7A8D] hover:text-[#0C0F14] transition-colors px-2 py-1 border border-[#E5E4DE] rounded"
@@ -67,12 +75,7 @@ export default function Nav() {
         {menuOpen && (
           <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-b border-[#E5E4DE] px-5 py-5 flex flex-col gap-4 shadow-lg">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="text-sm text-[#6B7A8D] py-1"
-                onClick={() => setMenuOpen(false)}
-              >
+              <a key={l.href} href={l.href} className="text-sm text-[#6B7A8D] py-1" onClick={() => setMenuOpen(false)}>
                 {l.label}
               </a>
             ))}

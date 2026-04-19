@@ -14,7 +14,7 @@ export default function Footer() {
             <h4 className="text-xs font-semibold uppercase tracking-widest text-[#0C0F14] mb-4">{t("Product", "Product")}</h4>
             <ul className="space-y-2.5 text-sm text-[#6B7A8D]">
               <li><a href="#features" className="hover:text-[#0C0F14] transition-colors">{t("Functies", "Features")}</a></li>
-              <li><a href="#" className="hover:text-[#0C0F14] transition-colors">{t("Prijzen", "Pricing")}</a></li>
+              <li><a href="#pricing" className="hover:text-[#0C0F14] transition-colors">{t("Prijzen", "Pricing")}</a></li>
               <li><a href="#" className="hover:text-[#0C0F14] transition-colors">{t("Roadmap", "Roadmap")}</a></li>
               <li><a href="#trust" className="hover:text-[#0C0F14] transition-colors">{t("Beveiliging", "Security")}</a></li>
             </ul>
@@ -39,23 +39,31 @@ export default function Footer() {
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-[#0C0F14] mb-4">{t("Verbinden", "Connect")}</h4>
             <ul className="space-y-2.5 text-sm text-[#6B7A8D]">
-              <li><a href="mailto:hallo@arbiterlegal.com" className="hover:text-[#0C0F14] transition-colors">hallo@arbiterlegal.com</a></li>
-              <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#0C0F14] transition-colors">LinkedIn</a></li>
+              <li>
+                <a href="mailto:josiramen@arbiterlegal.com" className="hover:text-[#0C0F14] transition-colors">
+                  josiramen@arbiterlegal.com
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#0C0F14] transition-colors">
+                  LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-[#E5E4DE] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[#6B7A8D]">
+        <div className="border-t border-[#E5E4DE] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
-            <Image src="/logo.svg" alt="Arbiter" width={20} height={20} />
-            <span>© {new Date().getFullYear()} Arbiter Legal BV.</span>
+            <Image src="/logo.svg" alt="Arbiter Legal" width={20} height={20} />
+            <span className="text-sm text-[#6B7A8D]">© {new Date().getFullYear()} Arbiter Legal BV.</span>
           </div>
           <span className="font-serif font-medium text-[#C9A84C] text-sm">
             {t("Minder administratie. Betere praktijk.", "Less admin. Better practice.")}
           </span>
           <button
             onClick={() => setLang(lang === "nl" ? "en" : "nl")}
-            className="text-xs font-semibold border border-[#E5E4DE] px-3 py-1.5 rounded hover:border-[#C9A84C] hover:text-[#0C0F14] transition-colors"
+            className="text-xs font-semibold border border-[#E5E4DE] px-3 py-1.5 rounded hover:border-[#C9A84C] hover:text-[#0C0F14] transition-colors text-[#6B7A8D]"
           >
             {lang === "nl" ? "🇬🇧 English" : "🇳🇱 Nederlands"}
           </button>

@@ -16,13 +16,13 @@ export default function Hero() {
       <section className="w-full px-5 pt-20 pb-16 md:pt-28 md:pb-24">
         <div className="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-[45%_55%] gap-10 md:gap-16 items-center">
 
-          {/* Left column */}
+          {/* Left */}
           <div className="flex flex-col gap-5 text-center md:text-left items-center md:items-start">
             <div className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#C9A84C]/60 bg-[#C9A84C]/6 text-xs font-medium text-[#C9A84C]">
-              {t("Voor Nederlandse advocaten", "For Dutch lawyers")}
+              {t("AI-native juridisch besturingssysteem", "AI-native legal operating system")}
             </div>
 
-            <h1 className="font-serif text-[clamp(32px,5vw,52px)] font-medium leading-[1.15] text-[#0C0F14]">
+            <h1 className="font-serif text-[clamp(30px,4.5vw,52px)] font-medium leading-[1.15] text-[#0C0F14]">
               {t(
                 "Van eerste bericht tot afgesloten dossier — alles in één systeem.",
                 "From first message to closed case — one system."
@@ -31,8 +31,8 @@ export default function Hero() {
 
             <p className="text-base md:text-lg text-[#6B7A8D] leading-relaxed max-w-[480px]">
               {t(
-                "Arbiter vangt elke e-mail, WhatsApp, document en oproep automatisch op en structureert ze in één werkbaar dossier.",
-                "Arbiter captures every email, WhatsApp, document, and call automatically and structures them into a single workable case."
+                "Arbiter Legal vangt elke e-mail, WhatsApp, document en oproep automatisch op en structureert ze in één werkbaar dossier.",
+                "Arbiter Legal captures every email, WhatsApp, document, and call automatically — structured into one workable case file."
               )}
             </p>
 
@@ -56,7 +56,7 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Right column */}
+          {/* Right */}
           <div className="w-full">
             <FlowBuilder />
           </div>

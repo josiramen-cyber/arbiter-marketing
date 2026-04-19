@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "../LanguageContext";
+import FrustrationIllustration from "../illustrations/FrustrationIllustration";
 
 const cards = [
   {
@@ -26,7 +27,7 @@ export default function Problem() {
 
   return (
     <section id="problem" className="py-20 px-5 bg-[#F7F6F2]">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-xs font-semibold uppercase tracking-widest text-[#C9A84C] mb-3">
             {t("Het probleem", "The problem")}
@@ -40,6 +41,11 @@ export default function Problem() {
               "Lawyers lose 2 to 3 hours per day figuring out what happened. Not solving legal problems — just finding the information."
             )}
           </p>
+        </div>
+
+        {/* Frustration illustration */}
+        <div className="rounded-2xl overflow-hidden border border-[#E5E4DE] mb-10 max-w-3xl mx-auto">
+          <FrustrationIllustration />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
