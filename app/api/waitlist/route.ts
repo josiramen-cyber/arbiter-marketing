@@ -3,10 +3,12 @@ export const runtime = "nodejs";
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+}
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const INTERNAL = "josiramen@arbiterlegal.com";
@@ -67,7 +69,7 @@ export async function POST(req: NextRequest) {
     ? forwarded.split(",")[0].trim()
     : (req.headers.get("x-real-ip") ?? null);
 
-  const { error: dbError } = await supabase.from("waitlist_signups").insert({
+  const { error: dbError } = await getSupabase().from("waitlist_signups").insert({
     email: cleanEmail,
     full_name: full_name?.trim() ?? null,
     firm_name: firm_name?.trim() ?? null,
