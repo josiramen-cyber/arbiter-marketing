@@ -25,29 +25,34 @@ export default function Problem() {
   const { lang, t } = useLanguage();
 
   return (
-    <section id="problem" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="problem" className="py-20 px-5 bg-[#F7F6F2]">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-xs font-semibold uppercase tracking-widest text-[#C9A84C] mb-3">
             {t("Het probleem", "The problem")}
           </p>
-          <h2 className="font-serif text-4xl font-medium text-[#0C0F14]">
+          <h2 className="font-serif text-3xl md:text-4xl font-medium text-[#0C0F14] max-w-2xl mx-auto">
             {t("Elke dag rebuilt u dezelfde context.", "Every day you rebuild the same context.")}
           </h2>
+          <p className="mt-4 text-base text-[#6B7A8D] max-w-xl mx-auto">
+            {t(
+              "Advocaten verliezen 2 tot 3 uur per dag met uitzoeken wat er is gebeurd. Niet met het oplossen van juridische problemen — alleen maar met het vinden van de informatie.",
+              "Lawyers lose 2 to 3 hours per day figuring out what happened. Not solving legal problems — just finding the information."
+            )}
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {cards.map((card, i) => (
-            <div key={i} className="bg-white border border-[#E5E4DE] rounded-xl p-8 relative">
-              <div className="w-2 h-2 rounded-full bg-[#E05A5A] mb-4" />
-              <h3 className="text-lg font-semibold text-[#0C0F14] mb-2">
-                {lang === "nl" ? card.nl.title : card.en.title}
-              </h3>
-              <p className="text-sm text-[#6B7A8D] leading-relaxed">
-                {lang === "nl" ? card.nl.desc : card.en.desc}
-              </p>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+          {cards.map((card, i) => {
+            const content = lang === "nl" ? card.nl : card.en;
+            return (
+              <div key={i} className="bg-white border border-[#E5E4DE] rounded-xl p-6">
+                <div className="w-2 h-2 rounded-full bg-[#E05A5A] mb-4" />
+                <h3 className="text-base font-semibold text-[#0C0F14] mb-2">{content.title}</h3>
+                <p className="text-sm text-[#6B7A8D] leading-relaxed">{content.desc}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
