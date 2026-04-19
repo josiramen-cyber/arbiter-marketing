@@ -32,12 +32,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: false, error: "Invalid request." }, { status: 400 });
   }
 
-  const { email, full_name, firm_name, practice_area, firm_size, language } = body as {
+  const { email, full_name, firm_name, practice_area, firm_size, language, source } = body as {
     email?: string;
     full_name?: string;
     firm_name?: string;
     practice_area?: string;
     firm_size?: string;
+    source?: string;
     language?: string;
   };
 
@@ -68,6 +69,7 @@ export async function POST(req: NextRequest) {
     practice_area: practice_area?.trim() ?? null,
     firm_size: firm_size?.trim() ?? null,
     language: language ?? "nl",
+    source: source ?? null,
     user_agent,
     ip_address,
   });
