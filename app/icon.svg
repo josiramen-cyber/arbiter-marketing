@@ -1,0 +1,45 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+
+<!-- Top single block -->
+<g transform="translate(200, 80)">
+  <polygon points="0,-26 50,0 50,0 0,26 -50,0 -50,0" fill="#2A2F5A"/>
+  <polygon points="0,26 50,0 50,34 0,60" fill="#1B1F3B"/>
+  <polygon points="0,26 -50,0 -50,34 0,60" fill="#141830"/>
+</g>
+
+<!-- Middle left block -->
+<g transform="translate(150, 148)">
+  <polygon points="0,-26 50,0 50,0 0,26 -50,0 -50,0" fill="#2A2F5A"/>
+  <polygon points="0,26 50,0 50,34 0,60" fill="#1B1F3B"/>
+  <polygon points="0,26 -50,0 -50,34 0,60" fill="#141830"/>
+</g>
+
+<!-- Middle right block -->
+<g transform="translate(250, 148)">
+  <polygon points="0,-26 50,0 50,0 0,26 -50,0 -50,0" fill="#2A2F5A"/>
+  <polygon points="0,26 50,0 50,34 0,60" fill="#1B1F3B"/>
+  <polygon points="0,26 -50,0 -50,34 0,60" fill="#141830"/>
+</g>
+
+<!-- Bottom left block -->
+<g transform="translate(100, 216)">
+  <polygon points="0,-26 50,0 50,0 0,26 -50,0 -50,0" fill="#2A2F5A"/>
+  <polygon points="0,26 50,0 50,34 0,60" fill="#1B1F3B"/>
+  <polygon points="0,26 -50,0 -50,34 0,60" fill="#141830"/>
+</g>
+
+<!-- Bottom center block (purple accent) -->
+<g transform="translate(200, 216)">
+  <polygon points="0,-26 50,0 50,0 0,26 -50,0 -50,0" fill="#A98FE0"/>
+  <polygon points="0,26 50,0 50,34 0,60" fill="#8B6FD4"/>
+  <polygon points="0,26 -50,0 -50,34 0,60" fill="#6B50B0"/>
+</g>
+
+<!-- Bottom right block -->
+<g transform="translate(300, 216)">
+  <polygon points="0,-26 50,0 50,0 0,26 -50,0 -50,0" fill="#2A2F5A"/>
+  <polygon points="0,26 50,0 50,34 0,60" fill="#1B1F3B"/>
+  <polygon points="0,26 -50,0 -50,34 0,60" fill="#141830"/>
+</g>
+
+</svg>

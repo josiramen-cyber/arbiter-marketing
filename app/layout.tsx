@@ -11,6 +11,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  icons: { icon: "/icon.svg", shortcut: "/icon.svg" },
   title: "Arbiter Legal — Minder administratie. Betere praktijk.",
   description:
     "Van eerste bericht tot afgesloten dossier. Arbiter vangt elke e-mail, WhatsApp, document en oproep automatisch op en structureert ze in één werkbaar dossier.",

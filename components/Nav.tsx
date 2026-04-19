@@ -27,12 +27,12 @@ export default function Nav() {
 
           {/* Logo lockup */}
           <a href="#" className="flex items-center gap-2.5 flex-shrink-0 group">
-            <Image src="/logo.svg" alt="Arbiter Legal" width={30} height={30} />
+            <Image src="/logo.svg" alt="Arbiter Legal" width={28} height={28} />
             <div className="flex flex-col leading-none">
-              <span className="font-serif font-bold text-[17px] text-[#0C0F14] tracking-tight">
+              <span className="font-serif font-bold text-[16px] text-[#0C0F14] tracking-tight">
                 Arbiter Legal
               </span>
-              <span className="text-[10px] text-[#C9A84C] font-medium tracking-wide mt-0.5">
+              <span className="hidden sm:block text-[10px] text-[#C9A84C] font-medium tracking-wide mt-0.5">
                 {t("Minder administratie. Betere praktijk.", "Less admin. Better practice.")}
               </span>
             </div>

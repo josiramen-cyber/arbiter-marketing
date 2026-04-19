@@ -6,21 +6,21 @@ export default function Product() {
   const { t } = useLanguage();
 
   return (
-    <section id="product" className="py-20 px-5 bg-white">
+    <section id="product" className="py-16 md:py-20 px-4 sm:px-6 bg-white">
       <div className="max-w-4xl mx-auto">
         <p className="text-xs font-semibold uppercase tracking-widest text-[#C9A84C] mb-4 text-center md:text-left">
           {t("Het product", "The product")}
         </p>
 
-        <h2 className="font-serif text-3xl md:text-4xl font-medium text-[#0C0F14] leading-snug mb-10 text-center md:text-left max-w-3xl">
+        <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-[#0C0F14] leading-snug mb-8 text-center md:text-left max-w-3xl">
           {t(
             "Een AI-native juridisch besturingssysteem voor advocaten.",
             "An AI-native legal operating system for lawyers."
           )}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14">
-          <div className="space-y-5 text-[15px] text-[#6B7A8D] leading-relaxed">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-14">
+          <div className="space-y-4 text-[15px] text-[#6B7A8D] leading-relaxed">
             <p>
               {t(
                 "Terwijl andere juridische software begint wanneer u een dossier opent, begint Arbiter Legal bij het eerste WhatsApp-bericht. Elke inkomende interactie — e-mail, WhatsApp, telefoongesprek, document — wordt automatisch gestructureerd in één dossier met een chronologische tijdlijn.",
@@ -35,9 +35,9 @@ export default function Product() {
             </p>
           </div>
 
-          <div className="space-y-5 text-[15px] text-[#6B7A8D] leading-relaxed">
+          <div className="space-y-4 text-[15px] text-[#6B7A8D] leading-relaxed">
             <div className="border-l-2 border-[#C9A84C] pl-5">
-              <p className="font-serif text-3xl font-medium text-[#0C0F14] mb-1">
+              <p className="font-serif text-2xl sm:text-3xl font-medium text-[#0C0F14] mb-1">
                 {t("2–3 uur per dag", "2–3 hours a day")}
               </p>
               <p className="text-sm">
@@ -56,8 +56,8 @@ export default function Product() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[#E5E4DE] text-center">
-          <p className="font-serif text-xl text-[#C9A84C] font-medium">
+        <div className="mt-10 pt-8 border-t border-[#E5E4DE] text-center">
+          <p className="font-serif text-lg sm:text-xl text-[#C9A84C] font-medium">
             {t("Minder administratie. Betere praktijk.", "Less admin. Better practice.")}
           </p>
         </div>

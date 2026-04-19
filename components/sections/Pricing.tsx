@@ -102,16 +102,16 @@ export default function Pricing() {
     <>
       <SignupModal open={modalOpen} onClose={() => setModalOpen(false)} />
 
-      <section id="pricing" className="py-20 px-5" style={{ background: "#F9F9F6" }}>
+      <section id="pricing" className="py-16 md:py-20 px-4 sm:px-6" style={{ background: "#F9F9F6" }}>
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10 md:mb-12">
             <p className="text-xs font-semibold uppercase tracking-widest text-[#C9A84C] mb-3">
               {t("Prijzen", "Pricing")}
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-medium text-[#0C0F14]">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-[#0C0F14]">
               {t("Kies uw systeemniveau.", "Choose your system tier.")}
             </h2>
-            <p className="mt-3 text-base text-[#6B7A8D] max-w-lg mx-auto">
+            <p className="mt-3 text-sm sm:text-base text-[#6B7A8D] max-w-lg mx-auto">
               {t(
                 "Geen verborgen kosten. Geen complexe licenties. Gewoon het systeem dat bij uw praktijk past.",
                 "No hidden costs. No complex licensing. Just the system that fits your practice."
@@ -119,8 +119,8 @@ export default function Pricing() {
             </p>
           </div>
 
-          {/* Kanban scroll container — horizontal on desktop, vertical on mobile */}
-          <div className="flex flex-col md:flex-row gap-5 md:overflow-x-auto md:snap-x md:snap-mandatory pb-4">
+          {/* Mobile: stacked cards. Desktop: horizontal kanban scroll */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5">
             {tiers.map((tier) => {
               const content = lang === "nl" ? tier.nl : tier.en;
               const isScale = tier.dark;
@@ -130,45 +130,39 @@ export default function Pricing() {
                 <div
                   key={tier.label}
                   className={[
-                    "relative flex flex-col rounded-2xl p-7 flex-shrink-0 md:w-[340px] md:snap-start transition-all duration-200",
+                    "relative flex flex-col rounded-2xl p-6 md:p-7 transition-all duration-200 cursor-pointer",
                     "hover:scale-[1.02] hover:shadow-xl",
                     isScale
-                      ? "bg-[#0C0F14] border border-[#1f2937] text-white"
+                      ? "bg-[#0C0F14] border border-[#1f2937]"
                       : "bg-white border border-[#E5E7EB]",
-                    isSolo
-                      ? "border-t-4 border-t-[#C9A84C]"
-                      : "",
+                    isSolo ? "border-t-4 border-t-[#C9A84C]" : "",
                   ].join(" ")}
                 >
-                  {/* Most popular badge */}
                   {isSolo && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="bg-[#C9A84C] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+                      <span className="bg-[#C9A84C] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full whitespace-nowrap">
                         {t("Meest gekozen", "Most popular")}
                       </span>
                     </div>
                   )}
 
-                  {/* Tier label */}
                   <span className={[
-                    "text-[10px] font-bold tracking-[0.15em] uppercase mb-4 block",
+                    "text-[10px] font-bold tracking-[0.15em] uppercase mb-3 block",
                     isScale ? "text-[#C9A84C]" : "text-[#6B7A8D]",
                   ].join(" ")}>
                     {tier.label}
                   </span>
 
-                  {/* Title */}
                   <h3 className={[
-                    "font-serif text-xl font-medium mb-3",
+                    "font-serif text-lg font-medium mb-2",
                     isScale ? "text-white" : "text-[#0C0F14]",
                   ].join(" ")}>
                     {content.title}
                   </h3>
 
-                  {/* Price */}
-                  <div className="flex items-baseline gap-1.5 mb-3">
+                  <div className="flex items-baseline gap-1 mb-2">
                     <span className={[
-                      "font-serif text-4xl font-semibold",
+                      "font-serif text-3xl sm:text-4xl font-semibold",
                       isScale ? "text-white" : "text-[#0C0F14]",
                     ].join(" ")}>
                       {content.price}
@@ -181,40 +175,30 @@ export default function Pricing() {
                     </span>
                   </div>
 
-                  {/* Constraint (Team only) */}
                   {"constraint" in content && (
-                    <div className="mb-3 text-xs font-semibold text-[#C9A84C] bg-[#C9A84C]/10 border border-[#C9A84C]/20 rounded-lg px-3 py-2">
+                    <div className="mb-3 text-xs font-semibold text-[#C9A84C] bg-[#C9A84C]/10 border border-[#C9A84C]/20 rounded-lg px-3 py-1.5">
                       {content.constraint}
                     </div>
                   )}
 
-                  {/* Description */}
                   <p className={[
-                    "text-sm leading-relaxed mb-6",
+                    "text-sm leading-relaxed mb-5",
                     isScale ? "text-[#9CA3AF]" : "text-[#6B7A8D]",
                   ].join(" ")}>
                     {content.desc}
                   </p>
 
-                  {/* Divider */}
-                  <div className={["h-px mb-6", isScale ? "bg-[#1f2937]" : "bg-[#E5E7EB]"].join(" ")} />
+                  <div className={["h-px mb-5", isScale ? "bg-[#1f2937]" : "bg-[#E5E7EB]"].join(" ")} />
 
-                  {/* Features */}
-                  <ul className="flex flex-col gap-3 mb-8 flex-1">
+                  <ul className="flex flex-col gap-2.5 mb-6 flex-1">
                     {content.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5">
-                        <Check
-                          size={14}
-                          className={["mt-0.5 flex-shrink-0", isScale ? "text-[#C9A84C]" : "text-[#2ECC8A]"].join(" ")}
-                        />
-                        <span className={["text-sm", isScale ? "text-[#D1D5DB]" : "text-[#6B7A8D]"].join(" ")}>
-                          {f}
-                        </span>
+                      <li key={f} className="flex items-start gap-2">
+                        <Check size={13} className={["mt-0.5 flex-shrink-0", isScale ? "text-[#C9A84C]" : "text-[#2ECC8A]"].join(" ")} />
+                        <span className={["text-sm", isScale ? "text-[#D1D5DB]" : "text-[#6B7A8D]"].join(" ")}>{f}</span>
                       </li>
                     ))}
                   </ul>
 
-                  {/* CTA */}
                   <button
                     onClick={() => setModalOpen(true)}
                     className={[
